@@ -1,0 +1,66 @@
+#!/bin/bash
+Bank=()
+    Name=
+    Amount=0
+    Balance=1000
+    Age=0
+
+     pinfo(){
+        read -p = "Enter your name" Name
+        read -p = "Enter your age" Age
+        }
+
+     pers(){
+        echo "Name = $Name"
+        echo "Age = $Age"
+        }
+
+     checkbal(){
+        echo "Your balance = $Balance"
+        }
+
+     deposite(){
+        read = "Amount deposited = " Deposite
+        $Balance = $Deposite + $Balance
+        }
+
+     withdrawl(){
+        read= "Enter amount you want to remove = $Withdrawl"
+        if $Balance < $Amount
+            then "Insufficient balance"
+        else
+            $Balance = $Balance - $Amount
+            echo "Amount withdrawl= "
+        fi
+}
+
+while true; do
+        echo "LENA BANK"
+        echo "1.For Deposite"
+        echo "2.For Withdraw"
+        echo "3.For Check"
+        echo "4.Personal Information"
+        echo "5.Exit"
+
+        read -p "Choose an option :" choice
+  case $choice in
+            1)
+                read -p "Amount to be Deposited " Deposite
+                deposite "$Deposite"
+                ;;
+            2)
+                read -p "Amount to be Withdrawl" Withdrawl
+                withdrawl "$Withdrawl"
+                ;;
+            3)
+                checkbal
+                ;;
+            4)
+                pers
+                ;;
+
+            *)
+                echo "Invalid choice, please enter an valid choice "
+                ;;
+        esac
+done
